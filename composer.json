@@ -1,0 +1,8 @@
+{
+    "require": {
+        "amphp/amp": "^3.0",
+        "revolt/event-loop": "^1.0",
+        "amphp/parallel": "^2.2",
+        "twilio/sdk": "^7.13"
+    }
+}
