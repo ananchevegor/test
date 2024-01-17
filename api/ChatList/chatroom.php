@@ -15,7 +15,7 @@
     echo "ошибка";
   }
 
-  $query = "SELECT * FROM chatroom".$user_id."_".$companion_id." ORDER BY time DESC";
+  $query = "SELECT * FROM chatroom".$user_id."_".$companion_id." ORDER BY time ASC";
   $sql = @mysqli_query($conn, $query);
   while ($row = @mysqli_fetch_array($sql)) {
     $json[] = array(
