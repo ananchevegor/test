@@ -18,7 +18,8 @@
   $sql = @mysqli_query($conn, $query);
   while ($row = @mysqli_fetch_array($sql)) {
     $json[] = array(
-      "name" => $row['name'], 
+      "id" => $row["id"],
+      "name" => $row['name'],
       "lastMessage" => $row['lastmessage']
     );
   }
