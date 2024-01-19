@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => '__root__',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => 'a0f91db3358bd99881082e9fe10460a105a49a91',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         '__root__' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'a0f91db3358bd99881082e9fe10460a105a49a91',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -196,6 +196,15 @@
             'reference' => '793917ca44d40debdfb5aaf12f773cf8bff18aa7',
             'type' => 'library',
             'install_path' => __DIR__ . '/../twilio/sdk',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'workerman/workerman' => array(
+            'pretty_version' => 'v4.1.14',
+            'version' => '4.1.14.0',
+            'reference' => 'f7c9667c7b5387c01fa9e50ee79ed931e93ee76e',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../workerman/workerman',
             'aliases' => array(),
             'dev_requirement' => false,
         ),

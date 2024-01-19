@@ -18,6 +18,8 @@ if (!$conn) {
 }
 
 
+
+
 $query = "INSERT INTO users(name, `surname`, `country_id`, `phone`, `lastmessage`) VALUES ('name','surname','0','".$phone."','***')";
 $sql = @mysqli_query($conn, $query);
 if ($sql !== NULL) {
