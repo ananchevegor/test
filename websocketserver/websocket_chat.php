@@ -7,7 +7,7 @@ require_once __DIR__.'/../vendor/autoload.php';
 
 
 
-$ws_worker = new Worker('websocket://0.0.0.0:2346');
+$ws_worker = new Worker('websocket://0.0.0.0:2347');
 
 
 $ws_worker->count=4;
@@ -23,13 +23,17 @@ $ws_worker->onConnect = function ($connection) use ($ws_worker) {
 
 // Emitted when data received
 $ws_worker->onMessage = function ($connection, $data) use ($ws_worker) {
+    echo $data;
     $json = json_decode($data);
+
     foreach ($ws_worker->connections as $conn) {
-        if ($json->clientID == $conn->clientId) {
-            $conn->send(json_encode(array(
-                "username" => $json->username,
-                "password" => $json->password
-            )));
+        if ($json->client == $conn->clientId) {
+            $mesjson = json_encode(array(
+                "message" => $json->message,
+                "user_id" => $json->user_id
+            ));
+            echo $mesjson;
+            $conn->send($mesjson);
         }
     }
 };

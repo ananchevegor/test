@@ -14,14 +14,17 @@
     echo "ошибка";
   }
 
-  $query = "SELECT * FROM `users` INNER JOIN chatlist ON chatlist.companion_id=users.id WHERE chatlist.user_id='".$id."'";
+  $query = "SELECT users.* FROM `users` INNER JOIN chatlist ON chatlist.companion_id=users.id WHERE chatlist.user_id='".$id."'";
   $sql = @mysqli_query($conn, $query);
   while ($row = @mysqli_fetch_array($sql)) {
+    
     $json[] = array(
       "id" => $row["id"],
       "name" => $row['name'],
       "lastMessage" => $row['lastmessage']
     );
+    
+    
   }
 
   echo json_encode($json);

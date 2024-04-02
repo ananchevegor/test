@@ -1,5 +1,5 @@
 <?php
-
+header("Access-Control-Allow-Origin: http://localhost");
     $user_id = $_POST['user_id'];
     $companion_id = $_POST['companion_id'];
     $message = $_POST['message'];
@@ -16,7 +16,7 @@
         echo "ошибка";
     }
 
-    $query = "INSERT INTO chatroom".$user_id."_".$companion_id."(user_id, user_id_message, time) VALUES('".$user_id."', '".$message."', NOW())";
+    $query = "CALL MessegeChatRoom(".$user_id.",".$companion_id.",'".$message."');";
     $sql = @mysqli_query($conn, $query);
     if ($sql !== NULL) {
         echo "success";
